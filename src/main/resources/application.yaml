@@ -1,3 +1,19 @@
 spring:
   application:
     name: spring-shop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_shop_db
+    username: abdullah
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        ddl-auto: update
+    show-sql: true
+
+
+server:
+  port: 9193
