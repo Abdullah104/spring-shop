@@ -1,21 +1,10 @@
 package com.example.spring_shop.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-
-    String name;
-
-    @OneToMany(mappedBy = "category")
-    List<Product> products;
+public record Category(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id, String name,
+                       @OneToMany(mappedBy = "category") List<Product> products) {
 }
